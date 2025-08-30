@@ -54,4 +54,9 @@ npm install
 npm run dev
 #### Frontend läuft unter: http://localhost:5173
 
+### 🎥 Store App Demo  
+
+![Store App Demo](./StoreApp-Demo-ezgif.com-video-to-gif-converter.gif)
+
+
 
