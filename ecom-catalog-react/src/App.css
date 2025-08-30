@@ -1,0 +1,186 @@
+/* Grundstruktur */
+body {
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  color: #333;
+
+  /* Neuer Hintergrund */
+  background: linear-gradient(145deg, #f0f4f8, #e6eff5, #fefefe);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+/* Headline */
+h1 {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2c3e50;
+  text-align: center;
+  margin: 3rem 0 4rem 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+  line-height: 1.2;
+  direction: rtl;
+}
+
+/* Such- und Filterleiste */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.filters input,
+.filters select {
+  padding: 0.75rem 1.2rem;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  min-width: 220px;
+  text-align: right;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #1d6fa5;
+  box-shadow: 0 0 8px rgba(29,111,165,0.3);
+  outline: none;
+}
+
+/* Produkt-Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 0 2rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Einzelnes Produkt */
+.product-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 1.8rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Produktbild */
+.product-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-bottom: 1.4rem;
+}
+
+/* Produkttitel */
+.product-card h2 {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #222;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  direction: rtl;
+  text-align: right;
+  margin: 0 0 0.6rem 0;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.product-card:hover h2 {
+  color: #1d6fa5;
+}
+
+/* Beschreibung */
+.product-card p {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  direction: rtl;
+  text-align: right;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+/* Preis */
+.product-card .price {
+  font-weight: 800;
+  color: #1d6fa5;
+  font-size: 1.25rem;
+  text-align: right;
+  margin-top: auto;
+}
+
+/* Responsive Optimierungen */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+  }
+
+  .product-grid {
+    padding: 0 1rem 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .product-card {
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .product-card img {
+    height: 160px;
+    margin-bottom: 1rem;
+  }
+
+  .product-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .product-card p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .product-card .price {
+    font-size: 1.1rem;
+  }
+  
+  @keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+}
